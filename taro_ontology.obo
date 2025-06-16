@@ -9,44 +9,6 @@ id: TO:0000001
 name: Taro ontology root
 def: "Proportion of stakes germinated scored one month after planting." [CO:curators]
 
-
-synonym: "sprout" EXACT []
-synonym: "sprout_comp_r" EXACT []
-relationship: variable_of CO_334:0000472 ! Sprouting
-relationship: variable_of CO_334:0010220 ! Counting:Sprouting_method
-relationship: variable_of CO_334:0100582 ! ratio
-is_a: CO_334:0000472 ! Sprouting
-
-
-Taro leaf blight severity	TLBs	Visual severity rating of plants infected with taro leaf blight caused by oomycete Phytophthora colocasiae	Evaluation in Trials	Biotic Stress	Visual scoring based on a scale from 1-5
-
-Taro leaf blight incidence	TLBi	Proportion of plants within a plot showing symptoms of taro leaf blight	Evaluation in Trials	Biotic Stress	Proportion of plants within a plot showing symptoms of taro leaf blight
-
-Plant vigour	VIG	A qualitative trait indicating the plant vigour, visual rating	Evaluation in Trials	Agronomic	A qualitative trait indicating the plant vigour, visual rating at the scale of 3,5 and 7
-
-Plant height	PLT HT	Vertical height of plants from the ground to top of the canopy measured in centimeter (cm) or meters (m)	Evaluation in Trials	Agronomic	Measured as height from ground level to the top of canopy at harvest
-
-Number of corms/plot	CORM NO	Is a count of the number of corms harvested per plot 	Evaluation in Trials	Agronomic	Counting the number of corms during harvest
-
-Number of cormels/plot	CORMEL NO	Is a count of the number of cormels harvested per plot 	Evaluation in Trials	Agronomic	Counting the number of cormel during harvest
-
-Number of stolons/plot	STOLON NO	Is a count of the number of stolons harvested per plot 	Evaluation in Trials	Agronomic	Counting the number of stolons during harvest
-
-
-
-Corm yield (g/plot)	CORM YLD	Weight of corm from a unit plot	Evaluation in Trials	Agronomic	Weighing the corms per plot
-
-Cormel yield (g/plot)	CORMEL YLD	Weight of cormel from a unit plot	Evaluation in Trials	Agronomic	Weighing the cormels per plot
-
-Total tuber yield (g/plot)	TTW	Weight of tuber (corms,cormels and stolons) from a unit plot	Evaluation in Trials	Agronomic	Weighing the total tubers per plot
-
-Biomass (g/plot)	BIOMASS	Total plant mass (stem, leaves and petiole) above ground	Evaluation in Trials	Agronomic	Total weight of leaf, petiole and stem per plot
-
-Harvest Index	HI	Proportion of tuber yield over total biomass yield, expressed as a percentage.	Evaluation in Trials	Agronomic	Ratio between the tuber yield and the total biomass
-
-Number of plant stand harvested	HARVESTED NO	Number of plants in a plot at harvest	Evaluation in Trials	Agronomic	Count number of plants harvested per plot
-
-
 [Term]
 id: TO:0000002
 name: Agronomic
@@ -127,10 +89,87 @@ def: "Is a count of the number of cormels harvested per plot. Counting the numbe
 relationship: variable_of TO:0000012 ! cormels/plot
 
 [Term]
-
-Number of stolons/plot	STOLON NO	Is a count of the number of stolons harvested per plot 	Evaluation in Trials	Agronomic	Counting the number of stolons during harvest
-
-
+id: TO:0000014
+name: Number of stolons
+is_a: TO:0000002 ! Agronomic
 
 [Term]
+id: TO:0000015
+name: Number of stolons/plot
+synonym: "STOLON NO" []
+def: "Is a count of the number of stolons harvested per plot. Evaluation in Trials. Method: Counting the number of stolons during harvest" []
+relationship: variable_of TO:0000014 ! Number of stolons/plot
+
+[Term]
+id: TO:0000016
+name: Corm yield
+is_a: TO:0000002 ! Agronomic
+
+[Term]
+id: TO:0000017
+name: Corm yield (g/plot)
+synonym: "CORM YLD" []
+def: "Weight of corm from a unit plot Evaluation in Trials. Method: Weighing the corms per plot" []
+relationship: variable_of TO:0000016 ! Corm yield
+
+[Term]
+id: TO:0000018
+name: Cormel yield
+is_a: TO:0000002 ! Agronomic
+
+[Term]
+id: TO:0000019
+name: Cormel yield (g/plot)
+synonym: "CORMEL YLD" []
+def: "Weight of cormel from a unit plot. Method: Weighing the cormels per plot" []
+
+[Term]
+id: TO:0000020
+name: Total tuber yield
+is_a: TO:0000002 ! Agronomic
+
+[Term]
+id: TO:0000021
+name: Total tuber yield (g/plot)
+synonym: "TTW" []
+def: "Weight of tuber (corms,cormels and stolons) from a unit plot. Method: Weighing the total tubers per plot" []
+relationship: variable_of TO:0000020 ! Total tuber yield
+
+[Term]
+id: TO:0000022
+name: Biomass
+is_a: TO:0000002 ! Agronomic
+
+[Term]
+id: TO:0000023
+name: Biomass (g/plot)
+synonym: "BIOMASS" []
+def: "BIOMASS Total plant mass (stem, leaves and petiole) above ground. Total weight of leaf, petiole and stem per plot" []
+relationship: variable_of: TO:0000022 ! Biomass
+
+[Term]
+id: TO:0000024
+name: Harvest Index
+is_a: TO:0000002 ! Agronomic
+
+[Term]
+id: TO:0000025
+name: Harvest Index Proportion
+synonym: "HI" []
+def: "Proportion of tuber yield over total biomass yield, expressed as a percentage. Method: Ratio between the tuber yield and the total biomass" []
+
+[Term]
+id: TO:0000026
+name: Number of plant stands harvested
+is_a: TO:0000002 ! Agronomic
+
+[Term]
+id: TO:0000027
+name: Number of plants in a plot at harvest
+synonym: "HARVESTED NO" []
+def: "Number of plants in a plot at harvest. Method: Count number of plants harvested per plot"
+relationship: variable_of TO:0000026 ! Nubmer of plant stands harvested
+
+
+
 
